@@ -1,3 +1,26 @@
-<ul>
-    <li><a [routerLink]="['/reportH1']">Report 1</a></li> 
-</ul>
+<mat-accordion>
+
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            HistoricoPosiciones
+          </mat-panel-title>
+          <mat-panel-description>
+            Select one report from HistoricoPosiciones to execute it
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <button mat-stroked-button color="primary" [routerLink]="['/reportH1']">Report 1</button>
+      </mat-expansion-panel>
+
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        This is the expansion title
+      </mat-panel-title>
+      <mat-panel-description>
+        This is a summary of the content
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>This is the primary content of the panel.</p>
+  </mat-expansion-panel>
+</mat-accordion>

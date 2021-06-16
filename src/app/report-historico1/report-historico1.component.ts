@@ -6,6 +6,7 @@ import {MatSort, SortDirection} from '@angular/material/sort';
 import {merge, Observable, of as observableOf} from 'rxjs';
 import {catchError, map, startWith, switchMap} from 'rxjs/operators';
 import { MatTableDataSource } from '@angular/material/table';
+import { stringify } from '@angular/compiler/src/util';
  
 @Component({
   selector: 'app-report-historico1',
@@ -30,8 +31,7 @@ export class ReportHistorico1Component implements AfterViewInit {
   respuesta: R1[] = [];
   
   ngAfterViewInit() {
-  
-    
+
 
      this.historicoService.report1().subscribe({
       next: (resp: R1[]) => {
@@ -41,6 +41,8 @@ export class ReportHistorico1Component implements AfterViewInit {
         this.dataSource = new MatTableDataSource(resp);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
+
+        localStorage.setItem("Report 1"+" "+new Date(),JSON.stringify(resp))
     
 
       },
