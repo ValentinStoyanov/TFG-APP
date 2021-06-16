@@ -1,1 +1,36 @@
-<p>report-medida1 works!</p>
+<button (click)=goBack() mat-raised-button>Return to list</button>
+<div class="example-container mat-elevation-z8">
+    <div class="example-loading-shade"
+         *ngIf="isLoadingResults || isRateLimitReached">
+      <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
+    </div>
+  
+    <div class="example-table-container">
+  
+      <table mat-table [dataSource]="dataSource" class="example-table" matSort>
+
+        
+        <ng-container matColumnDef="ecu">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Ecu</th>
+          <td mat-cell *matCellDef="let row">{{row.ecu}}</td>
+        </ng-container>
+  
+        
+        <ng-container matColumnDef="average">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Average</th>
+          <td mat-cell *matCellDef="let row">{{row.average}}</td>
+        </ng-container>
+  
+      
+        <ng-container matColumnDef="fechaconv">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+            <td mat-cell *matCellDef="let row">{{row.fechaconv}}</td>
+          </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  
+    <mat-paginator  [pageSizeOptions]="[5, 10, 20]"> after </mat-paginator>
+  </div> 

@@ -39,7 +39,7 @@ export class ReportHistorico2Component implements AfterViewInit {
        this.dataSource.paginator = this.paginator;
        this.dataSource.sort = this.sort;
 
-       localStorage.setItem("Report 2: Mean fuel level percentage of every vehicle "+", Date of execution "+new Date().toLocaleString('en-EN')+ " R1",JSON.stringify(resp))
+       localStorage.setItem("Report 2 -HistoricoPosiciones- Mean fuel level percentage of every vehicle "+", Date of execution "+new Date().toLocaleString('en-EN')+ " R1",JSON.stringify(resp))
    
 
      },

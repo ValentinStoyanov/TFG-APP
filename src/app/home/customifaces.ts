@@ -3,3 +3,11 @@ export interface R1 {
     percentage: string;
   
   }
+
+
+  export interface R2 {
+    ecu: string;
+    average: string;
+    fechaconv: string;
+  
+  }

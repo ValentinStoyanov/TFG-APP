@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HistoricoService } from './services/historico.service';
+import { MedidasService } from './services/medidas.service';
 
 
 
@@ -7,7 +8,7 @@ import { HistoricoService } from './services/historico.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [HistoricoService]
+  providers: [HistoricoService,MedidasService]
 })
 export class AppComponent {
   title = 'TFG-APP';

@@ -5,6 +5,7 @@ import {MatSort, } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import {Location} from '@angular/common';
  
+
 @Component({
   selector: 'app-report-historico1',
   templateUrl: './report-historico1.component.html',
@@ -39,7 +40,7 @@ export class ReportHistorico1Component implements AfterViewInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 
-        localStorage.setItem("Report 1 Percentage of incorrect positions in the last trimester"+", Date of execution "+new Date().toLocaleString('en-EN')+" R1",JSON.stringify(resp))
+        localStorage.setItem("Report 1 -HistoricoPosiciones- Percentage of incorrect positions in the last trimester"+", Date of execution "+new Date().toLocaleString('en-EN')+" R1",JSON.stringify(resp))
     
 
       },
