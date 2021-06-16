@@ -21,11 +21,7 @@ export class RecordsComponent implements AfterViewInit {
 
   constructor() { }
 
-  
-
   ngAfterViewInit(): void {
-
-
 
   }
 
@@ -34,6 +30,13 @@ export class RecordsComponent implements AfterViewInit {
     if (rep == null){
       alert("There is no record selected")
     }else{
+
+    
+      
+
+    if ((rep.substr(rep.length - 2))==="R2"){
+      this.displayedColumns = ['ecu', 'average','fechaconv']
+    }
 
       
     this.showMe = true

@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort, } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import {Location} from '@angular/common';
+import { R1 } from '../home/customifaces';
  
 
 @Component({
@@ -59,11 +60,7 @@ export class ReportHistorico1Component implements AfterViewInit {
 
 }
 
-export interface R1 {
-  ecu: string;
-  percentage: string;
 
-}
 
 
 
