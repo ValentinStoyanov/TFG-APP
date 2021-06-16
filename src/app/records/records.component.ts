@@ -31,6 +31,11 @@ export class RecordsComponent implements AfterViewInit {
 
   execute_report(rep: string): void {
      
+    if (rep == null){
+      alert("There is no record selected")
+    }else{
+
+      
     this.showMe = true
     this.showMeNow = false
 
@@ -47,6 +52,10 @@ export class RecordsComponent implements AfterViewInit {
 
     setTimeout(() => this.dataSource.paginator = this.paginator);
     setTimeout(() => this.dataSource.sort = this.sort);
+
+    }
+
+
  
 
   }
@@ -62,10 +71,18 @@ export class RecordsComponent implements AfterViewInit {
 
 
   delete(rep: string): void {
-    
+
+    if (rep == null){
+
+      alert("There is not record selected")
+
+    }else{
       localStorage.removeItem(rep)
 
       window.location.reload();
+    }
+    
+      
 
     }
 

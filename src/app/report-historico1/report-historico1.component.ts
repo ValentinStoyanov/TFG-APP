@@ -1,12 +1,9 @@
 import {HistoricoService} from '../services/historico.service'
-import {HttpClient} from '@angular/common/http';
-import {Component, ViewChild, AfterViewInit,ChangeDetectionStrategy, OnInit, ChangeDetectorRef} from '@angular/core';
+import {Component, ViewChild, AfterViewInit} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort, SortDirection} from '@angular/material/sort';
-import {merge, Observable, of as observableOf} from 'rxjs';
-import {catchError, map, startWith, switchMap} from 'rxjs/operators';
+import {MatSort, } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { stringify } from '@angular/compiler/src/util';
+import {Location} from '@angular/common';
  
 @Component({
   selector: 'app-report-historico1',
@@ -26,7 +23,7 @@ export class ReportHistorico1Component implements AfterViewInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private historicoService: HistoricoService,) {}
+  constructor(private historicoService: HistoricoService,private _location: Location) {}
 
   respuesta: R1[] = [];
   
@@ -42,7 +39,7 @@ export class ReportHistorico1Component implements AfterViewInit {
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
 
-        localStorage.setItem("Report 1"+" "+new Date(),JSON.stringify(resp))
+        localStorage.setItem("Report 1 Percentage of incorrect positions in the last trimester"+", Date of execution "+new Date().toLocaleString('en-EN')+" R1",JSON.stringify(resp))
     
 
       },
@@ -51,10 +48,14 @@ export class ReportHistorico1Component implements AfterViewInit {
       },
       complete: () => (this),
     });
+  }
 
-    
+  goBack():void{
+
+    this._location.back();
 
   }
+
 }
 
 export interface R1 {

@@ -22,18 +22,24 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { RecordsComponent } from './records/records.component';
 import {MatListModule} from '@angular/material/list';
+import { ReportHistorico2Component } from './report-historico2/report-historico2.component';
+import { ReportMedida1Component } from './report-medida1/report-medida1.component';
+import { ReportMedida2Component } from './report-medida2/report-medida2.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: "reports", component: ReportsComponent },
   { path: "reportH1", component: ReportHistorico1Component },
+  { path: "reportH2", component: ReportHistorico2Component },
+  { path: "reportM1", component: ReportMedida1Component },
+  { path: "reportM2", component: ReportMedida2Component },
   { path: "records", component: RecordsComponent},
   { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
   declarations: [
-    AppComponent, HomeComponent, ReportsComponent, ReportHistorico1Component, RecordsComponent, 
+    AppComponent, HomeComponent, ReportsComponent, ReportHistorico1Component, RecordsComponent, ReportHistorico2Component, ReportMedida1Component, ReportMedida2Component, 
   ],
   imports: [
     BrowserModule,
