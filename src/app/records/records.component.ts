@@ -13,6 +13,7 @@ export class RecordsComponent implements AfterViewInit {
   displayedColumns: string[] = ['ecu', 'percentage'];
   showMe:boolean = false;
   showMeNow:boolean = true;
+  selected!: String;
   typesOfReports: string[] = Object.keys(localStorage)
   dataSource = new MatTableDataSource() 
 

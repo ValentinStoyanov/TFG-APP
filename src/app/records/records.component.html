@@ -44,7 +44,7 @@
     </mat-list-option>
   </mat-selection-list>
   
-  <p>
+  <p *ngIf="selected">
     Report selected: {{report.selectedOptions.selected[0]?.value}}
   </p>
 

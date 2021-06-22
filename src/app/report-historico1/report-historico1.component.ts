@@ -10,7 +10,8 @@ import { R1 } from '../home/customifaces';
 @Component({
   selector: 'app-report-historico1',
   templateUrl: './report-historico1.component.html',
-  styleUrls: ['./report-historico1.component.css']
+  styleUrls: ['./report-historico1.component.css'],
+  providers:[HistoricoService]
 })
 export class ReportHistorico1Component implements AfterViewInit {
   

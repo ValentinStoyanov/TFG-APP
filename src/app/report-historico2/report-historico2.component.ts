@@ -9,7 +9,8 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'app-report-historico2',
   templateUrl: './report-historico2.component.html',
-  styleUrls: ['./report-historico2.component.css']
+  styleUrls: ['./report-historico2.component.css'],
+  providers:[HistoricoService]
 })
 export class ReportHistorico2Component implements AfterViewInit {
 

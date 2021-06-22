@@ -9,7 +9,8 @@ import { R2 } from '../home/customifaces';
 @Component({
   selector: 'app-report-medida2',
   templateUrl: './report-medida2.component.html',
-  styleUrls: ['./report-medida2.component.css']
+  styleUrls: ['./report-medida2.component.css'],
+  providers:[MedidasService]
 })
 export class ReportMedida2Component implements AfterViewInit {
 
