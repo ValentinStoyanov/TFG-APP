@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { R1 } from '../home/customifaces';
+import { Observable } from 'rxjs/internal/Observable';
+import { catchError, map, tap } from 'rxjs/operators';
 
 
 @Injectable()
@@ -9,8 +12,6 @@ import { HttpClient } from '@angular/common/http';
     postId: any;
     errorMessage: any;  
 
-    
-
     report1(): any {
       return this.http.get<any>(`http://localhost:8080/HistoricoPosiciones/report1`)
       }
@@ -19,4 +20,9 @@ import { HttpClient } from '@angular/common/http';
       return this.http.get<any>(`http://localhost:8080/HistoricoPosiciones/report2`)
     }
 
+
 }
+
+
+
+

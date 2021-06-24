@@ -28,15 +28,16 @@ export class RecordsComponent implements AfterViewInit {
 
   execute_report(rep: string): void {
      
-    if (rep == null){
+    if (rep == null || rep === ""){
       alert("There is no record selected")
     }else{
 
-    
-      
+
 
     if ((rep.substr(rep.length - 2))==="R2"){
       this.displayedColumns = ['ecu', 'average','fechaconv']
+    }else{
+      this.displayedColumns = ['ecu', 'percentage']
     }
 
       
@@ -59,9 +60,6 @@ export class RecordsComponent implements AfterViewInit {
 
     }
 
-
- 
-
   }
 
 
@@ -74,22 +72,31 @@ export class RecordsComponent implements AfterViewInit {
 
 
 
-  delete(rep: string): void {
+  delete(rep: string): boolean {
 
-    if (rep == null){
+
+    if (rep == null || rep ===""){
 
       alert("There is not record selected")
+
+      return false
 
     }else{
       localStorage.removeItem(rep)
 
+      
+      this.reloadPage()
+
+      return true
+
+
+    }
+
+    }
+
+    reloadPage(){
       window.location.reload();
     }
-    
-      
-
-    }
-
 
 
 }

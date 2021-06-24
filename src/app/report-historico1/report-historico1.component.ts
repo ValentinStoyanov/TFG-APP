@@ -20,7 +20,7 @@ export class ReportHistorico1Component implements AfterViewInit {
   resultsLength = 0;
   isLoadingResults = true;
   isRateLimitReached = false;
-
+  querydony = false;
   dataSource!: MatTableDataSource<R1>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -49,7 +49,7 @@ export class ReportHistorico1Component implements AfterViewInit {
       error:  (err: any) => {
         console.error(err);
       },
-      complete: () => (this),
+      complete: () => (this.querydony=true),
     });
   }
 
@@ -58,6 +58,7 @@ export class ReportHistorico1Component implements AfterViewInit {
     this._location.back();
 
   }
+  
 
 }
 
